@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #fff;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .icon-box {
+      display: inline-block;
+      background-color: #000;
+      padding: 20px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+      border-radius: 4px;
+    }
+
+    .icon-box img {
+      width: 60px;
+      height: 60px;
+      filter: invert(28%) sepia(98%) saturate(4442%) hue-rotate(350deg) brightness(104%) contrast(95%);
+    }
+
+    .title {
+      color: #e3000f;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .description {
+      font-size: 15px;
+      color: #333;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 800px) {
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="grid-item">
+    <div class="icon-box"><img src="./Advanced-image/courses-image/open-book.png" alt="Book Icon"></div>
+    <div class="title">XI/XII BOARD</div>
+    <div class="description">Class 10th is undoubtedly one of the most relevant standards of formal education. However, class 12th board exam is the next milestone in the journey of education.</div>
+  </div>
+  <div class="grid-item">
+    <div class="icon-box"><img src="icon2.png" alt="Books Icon"></div>
+    <div class="title">CBSCE</div>
+    <div class="description">Class 10th is undoubtedly one of the most relevant standards of formal education. However, class 12th board exam is the next milestone in the journey of education.</div>
+  </div>
+  <div class="grid-item">
+    <div class="icon-box"><img src="icon3.png" alt="Brain Icon"></div>
+    <div class="title">MHT CET</div>
+    <div class="description">The MHT-CET or Common Entrance Test is an annual entrance exam conducted by the Government of Maharashtra. It is conducted by the Directorate of Technical Education.</div>
+  </div>
+  <div class="grid-item">
+    <div class="icon-box"><img src="icon4.png" alt="Head Icon"></div>
+    <div class="title">NEET</div>
+    <div class="description">Solidtuition was created by the vision and toil to be the most premier coaching institute for NEET and AIIMS preparations.</div>
+  </div>
+  <div class="grid-item">
+    <div class="icon-box"><img src="icon5.png" alt="Exam Paper Icon"></div>
+    <div class="title">JEE MAIN</div>
+    <div class="description">JEE Main and JEE Advanced are national level entrance exams which are held for offering admission in the premier engineering institutes in India.</div>
+  </div>
+  <div class="grid-item">
+    <div class="icon-box"><img src="icon6.png" alt="Book Icon"></div>
+    <div class="title">JEE ADV</div>
+    <div class="description">Solidtuition provides free JEE study material which is complete in itself, covering all the topics which are required to study for JEE Advanced examinations.</div>
+  </div>
+</div>
+
+</body>
+</html>
