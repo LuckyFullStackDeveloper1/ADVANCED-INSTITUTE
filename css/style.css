@@ -365,21 +365,32 @@
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
-	position: relative;
-	padding: 145px 0 50px 0;
-    background: linear-gradient(rgba(242, 139, 0, 0.2), rgba(242, 139, 0, 0.3)), url(../Advanced-image/Advanced.jpg#f6466c);
+    position: relative;
+    padding: 145px 0 50px 0;
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
+    overflow: hidden;
+    z-index: 1;
 }
 
-@media (max-width: 992px) {
-    .bg-breadcrumb {
-        padding-top: 50px;
-    }
-
+.bg-breadcrumb::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.6)
+      ), 
+      url(../Advanced-image/Advanced.jpg#f6466c);
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
 }
+
 /*** Single Page Hero Header End ***/
 
 
