@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Advanced Institute</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .why-advanced-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-advanced-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+            padding: 15px 20px;
+            border-radius: 0 25px 25px 0;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            transform: translateX(0);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
+            transition: width 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .feature-item:hover::before {
+            width: 100%;
+        }
+
+        .feature-item::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid #FFA500;
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .highlight {
+            color: #1e3c72;
+            font-weight: bold;
+        }
+
+        .visual-elements {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .visual-item {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .visual-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .faculty-icon {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .faculty-figures {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .figure {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .figure::before {
+            content: '👨‍🏫';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+        }
+
+        .library-visual {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .library-visual::before {
+            content: '📚';
+            display: block;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .meeting-visual {
+            background: linear-gradient(135deg, #20B2AA, #48D1CC);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .meeting-visual::before {
+            content: '👥';
+            display: block;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .facility-visual {
+            background: linear-gradient(135deg, #98FB98, #90EE90);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .facility-visual::before {
+            content: '🏢';
+            display: block;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hostel-visual {
+            background: linear-gradient(135deg, #DDA0DD, #DA70D6);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hostel-visual::before {
+            content: '🏠';
+            display: block;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .why-advanced-container {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+                padding: 12px 30px;
+            }
+            
+            .feature-item {
+                padding: 12px 15px;
+            }
+            
+            .feature-text {
+                font-size: 14px;
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="why-advanced-container">
+        <div class="section-header">
+            <h2 class="section-title animate-fade-in">Why Advanced?</h2>
+        </div>
+        
+        <div class="features-grid">
+            <div class="features-list">
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.1s;">
+                    <span class="feature-text"><span class="highlight">Qualified and Experienced</span> faculties</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.2s;">
+                    <span class="feature-text"><span class="highlight">Study material</span> designed by Doctorates</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.3s;">
+                    <span class="feature-text">Professionally planned <span class="highlight">academic calendar</span></span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.4s;">
+                    <span class="feature-text">Teaching on <span class="highlight">digital board</span></span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.5s;">
+                    <span class="feature-text"><span class="highlight">Affordable fee</span> and installment facility</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.6s;">
+                    <span class="feature-text">Regular <span class="highlight">reporting</span> for marks and absentees</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.7s;">
+                    <span class="feature-text">Advanced <span class="highlight">library</span> with locker facility</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.8s;">
+                    <span class="feature-text">Quarterly <span class="highlight">Parents-Teachers Meeting</span> (PTM)</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 0.9s;">
+                    <span class="feature-text">Unique <span class="highlight">study package</span> for JEE/NEET aspirants</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 1.0s;">
+                    <span class="feature-text"><span class="highlight">Synchronized time table</span> to work on all three parameters i.e. Coaching, College & Self-study</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 1.1s;">
+                    <span class="feature-text"><span class="highlight">Separate batches</span> for JEE/NEET/MHT-CET & Board</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 1.2s;">
+                    <span class="feature-text">Low cost <span class="highlight">Hostel facility</span></span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 1.3s;">
+                    <span class="feature-text">Early <span class="highlight">syllabus completion</span> followed by revision, doubt session & test series</span>
+                </div>
+                
+                <div class="feature-item animate-slide-in" style="animation-delay: 1.4s;">
+                    <span class="feature-text">Purified <span class="highlight">drinking water</span>, Security, Parking & <span class="highlight">CCTV surveillance</span></span>
+                </div>
+            </div>
+            
+            <div class="visual-elements">
+                <div class="visual-item animate-fade-in" style="animation-delay: 0.5s;">
+                    <div class="faculty-icon">
+                        <div class="faculty-figures">
+                            <div class="figure"></div>
+                            <div class="figure"></div>
+                            <div class="figure"></div>
+                        </div>
+                        <p style="font-weight: bold; color: #1e3c72;">QUALIFIED FACULTY</p>
+                    </div>
+                </div>
+                
+                <div class="visual-item animate-fade-in" style="animation-delay: 0.7s;">
+                    <div class="library-visual">
+                        ADVANCED LIBRARY
+                    </div>
+                </div>
+                
+                <div class="visual-item animate-fade-in" style="animation-delay: 0.9s;">
+                    <div class="meeting-visual">
+                        PARENT MEETINGS
+                    </div>
+                </div>
+                
+                <div class="visual-item animate-fade-in" style="animation-delay: 1.1s;">
+                    <div class="facility-visual">
+                        MODERN FACILITIES
+                    </div>
+                </div>
+                
+                <div class="visual-item animate-fade-in" style="animation-delay: 1.3s;">
+                    <div class="hostel-visual">
+                        HOSTEL FACILITY
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add intersection observer for animation triggers
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-slide-in, .animate-fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Add hover effects for feature items
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(15px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
