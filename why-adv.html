@@ -1,442 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Advanced Institute</title>
+    <meta charset="utf-8">
+    <title>WHY ADVANCED?</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="icon" sizes="60x60" href="./Advanced-image/circle.png">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Styles for Why Advanced Section -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .why-advanced-section {
+            background: linear-gradient(135deg, #43d448 0%, #e1d251 100%);
+            padding: 80px 0;
+            position: relative;
         }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
+        
         .why-advanced-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
+            padding: 60px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            margin: 0 20px;
         }
-
-        .why-advanced-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .section-header {
+        
+        .why-advanced-title {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-title {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 28px;
+            color: #666;
+            font-size: 3rem;
             font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-
+        
         .features-grid {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
             align-items: start;
-            position: relative;
-            z-index: 1;
         }
-
+        
         .features-list {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
         }
-
+        
         .feature-item {
             display: flex;
             align-items: center;
-            background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
-            padding: 15px 20px;
-            border-radius: 0 25px 25px 0;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-            transform: translateX(0);
-            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
-
-        .feature-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
-            transition: width 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-        }
-
-        .feature-item:hover::before {
+        
+        .feature-arrow {
+            background: linear-gradient(45deg, #ffd54f, #ffb300);
+            padding: 15px 30px;
+            border-radius: 0 30px 30px 0;
+            color: #333;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            position: relative;
             width: 100%;
+            max-width: 550px;
+            transition: all 0.3s ease;
         }
-
-        .feature-item::after {
+        
+        .feature-arrow:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-arrow::after {
             content: '';
             position: absolute;
-            right: -15px;
+            right: -18px;
             top: 50%;
             transform: translateY(-50%);
             width: 0;
             height: 0;
-            border-left: 15px solid #FFA500;
-            border-top: 25px solid transparent;
-            border-bottom: 25px solid transparent;
+            border-left: 18px solid #ffb300;
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent;
         }
-
-        .feature-text {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-        }
-
-        .highlight {
-            color: #1e3c72;
-            font-weight: bold;
-        }
-
-        .visual-elements {
+        
+        .images-column {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 40px;
             align-items: center;
+            padding-top: 15px;
         }
-
-        .visual-item {
-            background: white;
+        
+        .feature-image {
+            width: 140px;
+            height: 100px;
             border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            width: 100%;
-            max-width: 250px;
-        }
-
-        .visual-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .faculty-icon {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .faculty-figures {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .figure {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
             position: relative;
         }
-
-        .figure::before {
-            content: '👨‍🏫';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
+        
+        .feature-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
         }
-
-        .library-visual {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            border-radius: 15px;
-            padding: 20px;
+        
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
             text-align: center;
-            color: white;
-            font-weight: bold;
+            font-weight: 500;
         }
-
-        .library-visual::before {
-            content: '📚';
-            display: block;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .meeting-visual {
-            background: linear-gradient(135deg, #20B2AA, #48D1CC);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .meeting-visual::before {
-            content: '👥';
-            display: block;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .facility-visual {
-            background: linear-gradient(135deg, #98FB98, #90EE90);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: #333;
-            font-weight: bold;
-        }
-
-        .facility-visual::before {
-            content: '🏢';
-            display: block;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .hostel-visual {
-            background: linear-gradient(135deg, #DDA0DD, #DA70D6);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .hostel-visual::before {
-            content: '🏠';
-            display: block;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
+        
+        @media (max-width: 992px) {
             .features-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
             }
             
+            .images-column {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 25px;
+            }
+            
+            .feature-image {
+                width: 120px;
+                height: 85px;
+            }
+            
+            .why-advanced-title {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+        }
+        
+        @media (max-width: 768px) {
             .why-advanced-container {
-                padding: 20px;
+                padding: 40px 20px;
+                margin: 0 10px;
             }
             
-            .section-title {
-                font-size: 22px;
-                padding: 12px 30px;
+            .feature-arrow {
+                font-size: 13px;
+                padding: 12px 25px;
             }
             
-            .feature-item {
-                padding: 12px 15px;
+            .feature-image {
+                width: 100px;
+                height: 75px;
             }
             
-            .feature-text {
-                font-size: 14px;
+            .why-advanced-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
             }
         }
-
-        .animate-slide-in {
-            animation: slideInLeft 0.6s ease-out;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
+        
+        @media (max-width: 480px) {
+            .feature-image {
+                width: 80px;
+                height: 60px;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .image-placeholder {
+                font-size: 10px;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="why-advanced-container">
-        <div class="section-header">
-            <h2 class="section-title animate-fade-in">Why Advanced?</h2>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        
-        <div class="features-grid">
-            <div class="features-list">
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.1s;">
-                    <span class="feature-text"><span class="highlight">Qualified and Experienced</span> faculties</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.2s;">
-                    <span class="feature-text"><span class="highlight">Study material</span> designed by Doctorates</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.3s;">
-                    <span class="feature-text">Professionally planned <span class="highlight">academic calendar</span></span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.4s;">
-                    <span class="feature-text">Teaching on <span class="highlight">digital board</span></span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.5s;">
-                    <span class="feature-text"><span class="highlight">Affordable fee</span> and installment facility</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.6s;">
-                    <span class="feature-text">Regular <span class="highlight">reporting</span> for marks and absentees</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.7s;">
-                    <span class="feature-text">Advanced <span class="highlight">library</span> with locker facility</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.8s;">
-                    <span class="feature-text">Quarterly <span class="highlight">Parents-Teachers Meeting</span> (PTM)</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 0.9s;">
-                    <span class="feature-text">Unique <span class="highlight">study package</span> for JEE/NEET aspirants</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 1.0s;">
-                    <span class="feature-text"><span class="highlight">Synchronized time table</span> to work on all three parameters i.e. Coaching, College & Self-study</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 1.1s;">
-                    <span class="feature-text"><span class="highlight">Separate batches</span> for JEE/NEET/MHT-CET & Board</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 1.2s;">
-                    <span class="feature-text">Low cost <span class="highlight">Hostel facility</span></span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 1.3s;">
-                    <span class="feature-text">Early <span class="highlight">syllabus completion</span> followed by revision, doubt session & test series</span>
-                </div>
-                
-                <div class="feature-item animate-slide-in" style="animation-delay: 1.4s;">
-                    <span class="feature-text">Purified <span class="highlight">drinking water</span>, Security, Parking & <span class="highlight">CCTV surveillance</span></span>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-secondary px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center" style="height: 45px;">
+            <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                <div class="d-flex flex-wrap">
+                    <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                    <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>8237040536</a>
+                    <a href="#" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i>advancedkatol5@gmail.com</a>
                 </div>
             </div>
-            
-            <div class="visual-elements">
-                <div class="visual-item animate-fade-in" style="animation-delay: 0.5s;">
-                    <div class="faculty-icon">
-                        <div class="faculty-figures">
-                            <div class="figure"></div>
-                            <div class="figure"></div>
-                            <div class="figure"></div>
-                        </div>
-                        <p style="font-weight: bold; color: #1e3c72;">QUALIFIED FACULTY</p>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-flex justify-content-end">
+                    <div class="border-end border-start py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-facebook-f"></i></a>
                     </div>
-                </div>
-                
-                <div class="visual-item animate-fade-in" style="animation-delay: 0.7s;">
-                    <div class="library-visual">
-                        ADVANCED LIBRARY
+                    <div class="border-end py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-twitter"></i></a>
                     </div>
-                </div>
-                
-                <div class="visual-item animate-fade-in" style="animation-delay: 0.9s;">
-                    <div class="meeting-visual">
-                        PARENT MEETINGS
+                    <div class="border-end py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-instagram"></i></a>
                     </div>
-                </div>
-                
-                <div class="visual-item animate-fade-in" style="animation-delay: 1.1s;">
-                    <div class="facility-visual">
-                        MODERN FACILITIES
-                    </div>
-                </div>
-                
-                <div class="visual-item animate-fade-in" style="animation-delay: 1.3s;">
-                    <div class="hostel-visual">
-                        HOSTEL FACILITY
+                    <div class="border-end py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Topbar End -->
 
-    <script>
-        // Add intersection observer for animation triggers
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            <a href="#" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"> <img style="margin-top: -18px; border-style: solid; border-radius: 50%;" src="./333.png" alt="Logo"><a style="color: rgb(95, 200, 95);">ADVANCED INSTITUTE </a></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Stories</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="./batch1.html" class="dropdown-item">BATCH 24-25</a>
+                            <a href="./batch2.html" class="dropdown-item">BATCH 25-26</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="classes.html" class="dropdown-item">Our Courses</a>
+                            <a href="team.html" class="dropdown-item">Our Team</a>
+                            <a href="Dailyroutine.html" class="dropdown-item">Daily Routine</a>
+                            <a href="exam-pattern.html" class="dropdown-item">Exam Pattern</a>
+                        <a href="why-adv.html" class="dropdown-item">Why Advanced</a>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="gallery.html" class="dropdown-item">Gallery</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Register Now</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
 
-        // Observe all animated elements
-        document.querySelectorAll('.animate-slide-in, .animate-fade-in').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
-        });
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-primary display-3 wow fadeInDown" data-wow-delay="0.1s">WHY ADVANCED?</h3>
+        </div>
+    </div>
+    <!-- Header End -->
 
-        // Add hover effects for feature items
-        document.querySelectorAll('.feature-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(15px) scale(1.02)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateX(0) scale(1)';
-            });
-        });
-    </script>
+    <!-- Banner Start -->
+    <div class="container-fluid bg-secondary wow zoomInDown" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center text-center p-5">
+                <h1 class="me-4"><span class="fw-normal">Join us today for </span><span> study</span></h1>
+                <a href="#" class="text-white fw-bold fs-2"> <i class="fa fa-phone me-1"></i> 8237040536</a>
+            </div>
+        </div>
+    </div>
+    <!-- Banner End -->
+
+    <!-- Why Advanced Section Start -->
+    <div class="why-advanced-section">
+        <div class="container">
+            <div class="why-advanced-container">
+                <h1 class="why-advanced-title">WHY ADVANCED ?</h1>
+                
+                <div class="features-grid">
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-arrow">Qualified and Experienced faculties</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Study material, designed by Doctorates</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Professionally planned academic calender</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Teaching on digital board</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Affordable fee and installment facility</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Regular reporting for marks and absenteeism</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Advanced library with locker facility</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Quarterly Parents-Teachers Meeting (PTM)</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Unique study package for JEE/NEET aspirants</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Synchronized time table to work on all three parameters i.e. Coaching, College & Self-study</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Separate batches for JEE/NEET/MHT-CET & Board</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Low cost Hostel facility</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Early syllabus completion followed by revision, doubt session & test series</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-arrow">Purified drinking water, Secured Parking & CCTV surveillance</div>
+                        </div>
+                    </div>
+                    
+                    <div class="images-column">
+                        <div class="feature-image">
+                            <div class="image-placeholder">Faculty Image</div>
+                          <img src="./Advanced-image/why-adv-image/all.jpeg" alt="Qualified Faculty">
+                        </div>
+                        
+                        <div class="feature-image">
+                            <div class="image-placeholder">Teaching Image</div>
+                          <img src="./Advanced-image/why-adv-image/sir.jpeg" alt="Qualified Faculty">
+                        </div>
+                        
+                        <div class="feature-image">
+                            <div class="image-placeholder">Library Image</div>
+                    <img src="./Advanced-image/why-adv-image/student.jpeg" alt="Qualified Faculty">
+                        </div>
+                        
+                        <div class="feature-image">
+                            <div class="image-placeholder">Meeting Image</div>
+                         <img src="./Advanced-image/why-adv-image/ptm.jpeg" alt="Qualified Faculty">
+                        </div>
+                        
+                        <div class="feature-image">
+                            <div class="image-placeholder">Building Image</div>
+                            <!-- Replace with: <img src="./Advanced-image/building.jpg" alt="Institute Building"> -->
+                        </div>
+                        
+                        <div class="feature-image">
+                            <div class="image-placeholder">Students Image</div>
+                       <img src="./Advanced-image/why-adv-image/all.jpeg" alt="Qualified Faculty">
+                        </div>
+                        
+                        <div class="feature-image">
+                            <div class="image-placeholder">Facilities Image</div>
+                        <img src="./Advanced-image/why-adv-image/tame.jpeg" alt="Qualified Faculty">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why Advanced Section End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">ADVANCED Institute</h4>
+                            <p class="text-white mb-3">The goal of education is the advancement of knowledge and the dissemination of truth</p>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square btn-primary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Address</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fas fa-map-marker-alt"></i></a>
+                            <div class="text-white ms-2">
+                                <p class="mb-0">Near 11 no.School, Katol</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fa fa-phone-alt"></i></a>
+                            <div class="text-white ms-2">
+                                <p class="mb-0">+012 345 67890</p>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fas fa-envelope"></i></a>
+                            <div class="text-white ms-2">
+                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">info@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Quick Links</h4>
+                        <a href="#" class="footer-link">About Us</a>
+                        <a href="#" class="footer-link">Classes</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms & Conditions</a>
+                        <a href="#" class="footer-link">Schedule</a>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">ADVANCED Institute</h4>
+                            <p class="text-white mb-3">Education is not preparation for life; education is life itself</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-white"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>ADVANCEDInstitute</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-white">
+                    <!-- Template credits removed -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
